@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GTA VI trophy guide and tracker for PlayStation 5 — all 55 trophies, a step-by-step roadmap, and an offline checklist.">
+  <title>GTA VI Trophy Guide &amp; Tracker — Leonida Checklist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-title">
+        <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5</p>
+        <h1>Leonida Trophy Guide</h1>
+        <p class="tagline">All 55 trophies, a step-by-step roadmap, and your own offline checklist. No account, no connection — your progress lives in this browser.</p>
+      </div>
+      <section class="progress-summary" aria-label="Overall trophy progress">
+        <p class="progress-numbers"><span id="earned-count">0 of 55 earned</span></p>
+        <p class="progress-percent"><span id="progress-percent">0%</span> to Platinum</p>
+        <div class="progress-track" role="progressbar" aria-label="Progress to Platinum" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="overall-progress">
+          <div class="progress-fill" id="overall-progress-fill"></div>
+        </div>
+        <p class="progress-note" id="progress-note">Earn the other 54 trophies to unlock the Platinum.</p>
+      </section>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Views">
+    <button type="button" class="tab-button is-active" id="tab-roadmap" aria-controls="roadmap-view" aria-selected="true">Roadmap</button>
+    <button type="button" class="tab-button" id="tab-checklist" aria-controls="checklist-view" aria-selected="false">Checklist</button>
+  </nav>
+
+  <main>
+    <section id="roadmap-view" class="view is-active" aria-labelledby="tab-roadmap">
+      <p class="view-intro">Follow the stages in order. Finish the story first, then sweep side content, collectibles and activities, and clean up the grind last. Missable trophies are flagged up front so nothing gets locked out.</p>
+      <div id="missable-section" class="missable-section" aria-label="Missable trophies"></div>
+      <div id="roadmap-stages" class="roadmap-stages"></div>
+    </section>
+
+    <section id="checklist-view" class="view" aria-labelledby="tab-checklist" hidden>
+      <div class="controls" aria-label="Checklist controls">
+        <div class="control control-search">
+          <label for="search-input">Search</label>
+          <input type="search" id="search-input" placeholder="Search name, description or guide…" autocomplete="off">
+        </div>
+        <div class="control">
+          <label for="kind-filter">Category</label>
+          <select id="kind-filter">
+            <option value="all">All categories</option>
+            <option value="story">Story</option>
+            <option value="missable">Missable</option>
+            <option value="collectibles">Collectibles</option>
+            <option value="activities">Activities</option>
+            <option value="online">Online</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="grade-filter">Grade</label>
+          <select id="grade-filter">
+            <option value="all">All grades</option>
+            <option value="platinum">Platinum</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="bronze">Bronze</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="earned-filter">Status</label>
+          <select id="earned-filter">
+            <option value="all">All trophies</option>
+            <option value="earned">Earned</option>
+            <option value="not-earned">Not earned</option>
+          </select>
+        </div>
+        <label class="control control-toggle">
+          <input type="checkbox" id="spoiler-toggle" checked>
+          <span>Hide story spoilers</span>
+        </label>
+        <div class="control control-actions">
+          <button type="button" class="button" id="export-btn">Export progress</button>
+          <button type="button" class="button" id="import-btn">Import progress</button>
+          <input type="file" id="import-file" accept="application/json,.json" hidden>
+          <button type="button" class="button button-danger" id="reset-btn">Reset</button>
+        </div>
+      </div>
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+      <p class="import-message" id="import-message" role="status" hidden></p>
+      <div id="trophy-list" class="trophy-list"></div>
+      <p class="empty-state" id="empty-state" hidden>No trophies match these filters. Try clearing the search or choosing a different category.</p>
+    </section>
+
+    <aside id="detail-panel" class="detail-panel" aria-label="Trophy detail" hidden>
+      <div class="detail-inner">
+        <button type="button" class="detail-close" id="detail-close" aria-label="Close trophy detail">&times;</button>
+        <div id="detail-content" class="detail-content"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>Unofficial fan-made guide. Not affiliated with Rockstar Games or Sony Interactive Entertainment. Trophy names and descriptions are quoted from the official PlayStation trophy list for reference.</p>
+    <p>Your checklist is stored only in this browser (local storage). Export it to keep a backup.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
